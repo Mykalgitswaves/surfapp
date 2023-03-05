@@ -1,0 +1,26 @@
+Requirements
+    We are building a surf report app that takes a users homebreak and
+    queries noaa boeys for the closest boeys to that location. 
+    each user will have a schema that resembles the following:
+
+    surfer: {
+        homebreak: coordinates(STRING)
+    }
+    
+    a boey needs to relay wave height for a given beach, 
+    it would be dope if it could also supply 
+    users with  
+
+    #TODO: get more familiar with NOAA OUTPUT. maybe figure out the strucutre of their boeys and see if I can query one to start?? 
+    Boey: {
+        
+    }
+
+    relations
+
+    One surfer has many boeys and one boey has one surfer
+
+    OTHER IDEA THAT COULD BE FUN TO PLAY AROUND WITH MAYBE LATER??
+    It would be rad if you could sync this with google calendar to create a meeting when you are not busy and there are waves! Created from a preset of a few options you can select from
+
+    #TODO: so you would have wave height on the front end depending on your calendar 
