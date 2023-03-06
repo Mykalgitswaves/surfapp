@@ -1,12 +1,18 @@
 const fetch = require("node-fetch");
-var baseUrl = 'https://mw.buoybay.noaa.gov/api/v1';
+var baseUrl = 'https://www.ndbc.noaa.gov/data/realtime2/';
 
 
 // #TODO: Make the url use variables to allow for different buoy data to be represented.
 // Also #TODO: Make a swanky GUI for this stuff, idk i'll figure it out.
-async function fetchWrapper(){ 
+// For reference use this to set stuff up 
+// https://www.ndbc.noaa.gov/data/realtime2/41113.spec
+// 41113 is a buoy, types can be either .spec or .text
+var bouy = Number;
+var dataType = String;
+
+async function fetchWrapper(buoy, dataType){ 
     try {
-        let response = await fetch("https://www.ndbc.noaa.gov/data/realtime2/41113.spec")
+        let response = await fetch(`${baseUrl}${buoy}.${dataType}`)
         if(response) {
                 var resBlob = response.text()
                 return resBlob
@@ -19,4 +25,4 @@ async function fetchWrapper(){
     }
 }
 
-module.exports = fetchWrapper();
+module.exports = { fetchWrapper };
