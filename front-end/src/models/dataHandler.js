@@ -31,4 +31,3 @@ export default async function getFetch(num1, num2){
     }
   }
 
-
