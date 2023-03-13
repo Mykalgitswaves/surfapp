@@ -3,7 +3,7 @@
 // Will generate decimal num of swell height from api.
 // ----–----------––––––--–-–--–-–--–-–--–-––-–--–--–-- 
 // ----–----------––––––--–-–--–-–--–-–--–-––-–--–--–--
- 
+
 export default async function swellHeight(){
     let dataArr = [];
     try {
@@ -17,10 +17,10 @@ export default async function swellHeight(){
         })
         .then(data => {
             // Parse decimal rounded num of swell height
-            dataArr = data.data.slice(1,6).map(obj => parseFloat(obj.SwH))
-            console.log(dataArr)
+            dataArr = data.data.slice(1,10).map(obj => parseFloat(obj.SwH))
+            return dataArr
         })
-        return dataArr
+      return dataArr
     } catch(err){
         console.log(err)
     }
